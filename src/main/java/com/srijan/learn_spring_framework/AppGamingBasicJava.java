@@ -11,11 +11,13 @@ public class AppGamingBasicJava {
 		
 		
 //		var game = new MarioGame();
-		var game = new PacmanGame();
+		var game = new PacmanGame(); // 1: Object Creation 
 //		var game = new SuperContraGame();
 		
 		
-		var gameRunner = new GameRunner(game);
+		var gameRunner = new GameRunner(game); 
+		//2: Object Creation + Wiring of dependencies
+		//game is a Dependency of GameRunner
 		
 		gameRunner.run();
 		
