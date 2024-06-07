@@ -2,18 +2,12 @@ package com.srijan.learn_spring_framework.game;
 
 public class GameRunner {
 	
-	MarioGame game;
+	GamingConsole game;
 	
-	SuperContraGame superContraGame;
-	
-	public GameRunner(MarioGame game) {
+	public GameRunner(GamingConsole game) {
 		this.game = game;
 	}
 	
-	public GameRunner(SuperContraGame superContraGame) {
-		this.superContraGame = superContraGame;
-	}
-
 	public void run() {
 		System.out.println("Running game:" + game);
 		
@@ -21,15 +15,6 @@ public class GameRunner {
 		game.up();
 		game.left();
 		game.right();
-	}
-	
-	public void fight() {
-		System.out.println("Running game:" + superContraGame);
-		
-		superContraGame.down();
-		superContraGame.up();
-		superContraGame.left();
-		superContraGame.right();
 	}
 
 }
