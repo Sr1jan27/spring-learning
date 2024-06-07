@@ -4,8 +4,14 @@ public class GameRunner {
 	
 	MarioGame game;
 	
+	SuperContraGame superContraGame;
+	
 	public GameRunner(MarioGame game) {
 		this.game = game;
+	}
+	
+	public GameRunner(SuperContraGame superContraGame) {
+		this.superContraGame = superContraGame;
 	}
 
 	public void run() {
@@ -15,7 +21,15 @@ public class GameRunner {
 		game.up();
 		game.left();
 		game.right();
+	}
+	
+	public void fight() {
+		System.out.println("Running game:" + superContraGame);
 		
+		superContraGame.down();
+		superContraGame.up();
+		superContraGame.left();
+		superContraGame.right();
 	}
 
 }
