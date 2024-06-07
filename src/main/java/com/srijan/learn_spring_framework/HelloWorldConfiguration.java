@@ -5,9 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 
 // Released with Java JDK 16. 
-record Person (String name, int age) {
-	
-};
+record Person (String name, int age, Address address) {};
 
 // Address - firstline and city
 
@@ -28,8 +26,13 @@ public class HelloWorldConfiguration {
 	
 	@Bean
 	public Person person() {
-		var person = new Person("Dhruv", 22);
+		var person = new Person("Dhruv", 22, new Address("Main Street", "London"));
 		return person;
+	}
+	
+	@Bean
+	public Person person2MethodCall() {
+		return new Person(name(), age(), address());
 	}
 	
 	@Bean( name ="address2")

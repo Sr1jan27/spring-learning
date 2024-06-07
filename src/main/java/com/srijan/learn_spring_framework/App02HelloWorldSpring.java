@@ -26,7 +26,11 @@ public class App02HelloWorldSpring {
 		
 		System.out.println(context.getBean("person"));
 		
+		System.out.println(context.getBean("person2MethodCall"));
+		
 		System.out.println(context.getBean("address2"));
+		
+		System.out.println(context.getBean(Address.class));
 		
 		
 	}
