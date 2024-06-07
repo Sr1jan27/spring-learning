@@ -32,7 +32,7 @@ public class HelloWorldConfiguration {
 		return person;
 	}
 	
-	@Bean
+	@Bean( name ="address2")
 	public Address address() {
 		var address = new Address("R cube Properties", "Hyderabad");
 		return address;
