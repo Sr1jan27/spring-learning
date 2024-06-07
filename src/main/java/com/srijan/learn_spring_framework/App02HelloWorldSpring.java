@@ -16,6 +16,12 @@ public class App02HelloWorldSpring {
 				new AnnotationConfigApplicationContext(HelloWorldConfiguration.class);
 		//2: Configure the things that we want spring to manage- @Configuration
 		
+		// HelloWorldConfirhuration Class -@Confirguration
+		//name-@Bean
+		
+		//3: Retrieving Beans Managed by Spring
+		System.out.println(context.getBean("name"));
+		
 		
 	}
 
