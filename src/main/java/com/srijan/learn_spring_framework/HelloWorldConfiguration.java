@@ -29,12 +29,12 @@ public class HelloWorldConfiguration {
 		var person = new Person("Dhruv", 22, new Address("Main Street", "London"));
 		return person;
 	}
-//	
-//	@Bean
-//	public Person person2MethodCall() {
-//		return new Person(name(), age(), address());
-//	}
-//	
+	
+	@Bean
+	public Person person2MethodCall() {
+		return new Person(name(), age(), address());
+	}
+	
 	@Bean
 	public Person person3Parameters(String name, int age, Address address2) {
 		return new Person(name, age, address2);
