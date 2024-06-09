@@ -10,13 +10,13 @@ import com.srijan.learn_spring_framework.game.GamingConsole;
 
 @Configuration
 @ComponentScan("com.srijan.learn_spring_framework.game")
-public class App03GamingSpringBeans {
+public class GamingAppLauncherApplication {
 
 	public static void main(String[] args) {
 		
 		try(var context = 
 				new AnnotationConfigApplicationContext
-					(App03GamingSpringBeans.class)) {
+					(GamingAppLauncherApplication.class)) {
 			
 			context.getBean(GamingConsole.class).left();
 			
