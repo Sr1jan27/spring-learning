@@ -1,6 +1,8 @@
 package com.srijan.learn_spring_framework;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import com.srijan.learn_spring_framework.game.GameRunner;
 import com.srijan.learn_spring_framework.game.GamingConsole;
@@ -8,13 +10,27 @@ import com.srijan.learn_spring_framework.game.MarioGame;
 import com.srijan.learn_spring_framework.game.PacmanGame;
 import com.srijan.learn_spring_framework.game.SuperContraGame;
 
+
+@Configuration
 public class App03GamingSpringBeans {
+	
+	@Bean
+	public GamingConsole game() {
+		var game = new PacmanGame();
+		return game;
+	}
+	
+	@Bean
+	public GameRunner gameRunner(GamingConsole game) {
+		var gameRunner = new GameRunner(game);
+		return gameRunner;
+	}
 
 	public static void main(String[] args) {
 		
 		try(var context = 
 				new AnnotationConfigApplicationContext
-					(GamingConfiguration.class)) {
+					(App03GamingSpringBeans.class)) {
 			
 			System.out.println(context.getBean("game"));
 			
@@ -25,19 +41,7 @@ public class App03GamingSpringBeans {
 			context.getBean(GameRunner.class).run();
 			
 		}
-		
-	
-		
-////		var game = new MarioGame();
-//		var game = new PacmanGame(); // 1: Object Creation 
-////		var game = new SuperContraGame();
-//		
-//		
-//		var gameRunner = new GameRunner(game); 
-//		//2: Object Creation + Wiring of dependencies
-//		//game is a Dependency of GameRunner
-//		
-//		gameRunner.run();
+
 		
 	}
 
