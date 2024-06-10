@@ -20,6 +20,7 @@ public class SuperContraGame implements GamingConsole {
 	
 	public void right() {
 		System.out.println("Fight Backward"); 
+		System.out.println("check");
 	}
 
 }
