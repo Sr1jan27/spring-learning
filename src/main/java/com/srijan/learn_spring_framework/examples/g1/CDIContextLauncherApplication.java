@@ -15,12 +15,13 @@ class BusinessService {
 	public DataService dataService;
 	
 	@Autowired
-	public DataService getDataService() {
-		return dataService;
+	public void setDataService(DataService dataService) {
+		System.out.println("Setter Injection");
+		this.dataService = dataService;
 	}
 	
-	public void setDataService(DataService dataService) {
-		this.dataService = dataService;
+	public DataService getDataService() {
+		return dataService;
 	}
 }
 
