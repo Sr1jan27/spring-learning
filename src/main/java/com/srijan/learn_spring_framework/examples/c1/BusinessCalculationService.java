@@ -3,8 +3,10 @@ package com.srijan.learn_spring_framework.examples.c1;
 import java.util.Arrays;import javax.xml.crypto.Data;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+//@Component
+@Service
 public class BusinessCalculationService {
 	
 	private DataService dataService;
